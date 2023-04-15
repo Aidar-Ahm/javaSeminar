@@ -18,5 +18,5 @@ public class Task1 {
         System.out.printf("Треугольное число: %d ", sum);
         System.out.printf("Факториал: %d", factorial);
 
-        }
+    }
 }

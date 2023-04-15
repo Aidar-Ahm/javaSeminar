@@ -12,8 +12,9 @@ public class Task2 {
                     break;
                 }
                 else System.out.println(i);
-                break;}
+                break;
             }
         }
+    }
 }
 
