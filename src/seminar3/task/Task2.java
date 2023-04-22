@@ -15,5 +15,21 @@ public class Task2 {
         planets.add("Venera");
         planets.add("Venera");
         planets.add("Pluto");
+        planets.add("Pluto");
+        long startTime = System.currentTimeMillis();
+        StringBuilder sb = new StringBuilder();
+        List<String> res = new ArrayList<>();
+        for (int i = 0; i < planets.size(); i++) {
+            if (!res.contains(planets.get(i))){
+                res.add(planets.get(i));
+                int count = 0;
+                for (String planet : planets) {
+                    if (planet.equals(planets.get(i))) count++;
+                }
+            sb.append(planets.get(i)).append(":").append(count).append("\n");
+            }
+        }
+        System.out.println(sb);
+        System.out.println(System.currentTimeMillis()-startTime);
     }
 }
