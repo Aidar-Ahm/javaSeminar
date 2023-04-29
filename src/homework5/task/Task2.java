@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Task2 {
   public static void main(String[] args) {
-      List employees = new ArrayList<>();
+
       employees.add("Иван Иванов");
       employees.add("Светлана Петрова");
       employees.add("Кристина Белова");
@@ -33,7 +33,15 @@ public class Task2 {
 
     }
     static Map<String, Integer> nameCount = new HashMap<>();
+    static List employees = new ArrayList<>();
+    public static void countEmploeeys(String[] args) {
+        for(Object item:employees){
+            if(nameCount.containsKey(item)) {
+                nameCount.put((String) item, nameCount.get(item) + 1);
+            } else {nameCount.put((String) item,1);
+            }
+        }
 
-    public static void outPutPrint(String[] args) {
+    }
 
     }
