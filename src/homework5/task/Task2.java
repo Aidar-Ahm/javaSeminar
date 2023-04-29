@@ -7,47 +7,51 @@ import java.util.*;
 
 
 public class Task2 {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-      employees.add("Иван Иванов");
-      employees.add("Светлана Петрова");
-      employees.add("Кристина Белова");
-      employees.add("Анна Мусина");
-      employees.add("Иван Юрин");
-      employees.add("Петр Лыков");
-      employees.add("Павел Чернов");
-      employees.add("Иван Иванов");
-      employees.add("Петр Чернышов");
-      employees.add("Мария Федорова");
-      employees.add("Марина Светлова");
-      employees.add("Мария Савина");
-      employees.add("Иван Иванов");
-      employees.add("Мария Рыкова");
-      employees.add("Анна Крутова");
-      employees.add("Марина Лугова");
-      employees.add("Анна Владимирова");
-      employees.add("Петр Лыков");
-      employees.add("Иван Мечников");
-      employees.add("Петр Лыков");
-      employees.add("Иван Ежов");
+        employees.add("Иван Иванов");
+        employees.add("Светлана Петрова");
+        employees.add("Кристина Белова");
+        employees.add("Анна Мусина");
+        employees.add("Иван Юрин");
+        employees.add("Петр Лыков");
+        employees.add("Павел Чернов");
+        employees.add("Иван Иванов");
+        employees.add("Петр Чернышов");
+        employees.add("Мария Федорова");
+        employees.add("Марина Светлова");
+        employees.add("Мария Савина");
+        employees.add("Иван Иванов");
+        employees.add("Мария Рыкова");
+        employees.add("Анна Крутова");
+        employees.add("Марина Лугова");
+        employees.add("Анна Владимирова");
+        employees.add("Петр Лыков");
+        employees.add("Иван Мечников");
+        employees.add("Петр Лыков");
+        employees.add("Марина Светлова");
 
-      countEmploeeys();
-      outPut();
+        countEmploeeys();
+        outPut();
     }
+
     static Map<String, Integer> nameCount = new HashMap<>();
     static List employees = new ArrayList<>();
+
     public static void countEmploeeys() {
-        for(Object item:employees){
-            if(nameCount.containsKey(item)) {
+        for (Object item : employees) {
+            if (nameCount.containsKey(item)) {
                 nameCount.put((String) item, nameCount.get(item) + 1);
-            } else {nameCount.put((String) item,1);
+            } else {
+                nameCount.put((String) item, 1);
             }
         }
 
     }
-    public static void outPut(){
-        System.out.println(nameCount);
 
+    public static void outPut() {
+        for (var item : nameCount.entrySet()) {
+            System.out.printf("%s: %s \n", item.getKey(), item.getValue() + "раз(а)");
+        }
     }
-
-    }
+}
