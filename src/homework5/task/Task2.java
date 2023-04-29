@@ -31,16 +31,22 @@ public class Task2 {
       employees.add("Петр Лыков");
       employees.add("Иван Ежов");
 
+      countEmploeeys();
+      outPut();
     }
     static Map<String, Integer> nameCount = new HashMap<>();
     static List employees = new ArrayList<>();
-    public static void countEmploeeys(String[] args) {
+    public static void countEmploeeys() {
         for(Object item:employees){
             if(nameCount.containsKey(item)) {
                 nameCount.put((String) item, nameCount.get(item) + 1);
             } else {nameCount.put((String) item,1);
             }
         }
+
+    }
+    public static void outPut(){
+        System.out.println(nameCount);
 
     }
 
