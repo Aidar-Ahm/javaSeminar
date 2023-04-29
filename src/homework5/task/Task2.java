@@ -4,6 +4,7 @@ package homework5.task;
 // Отсортировать по убыванию популярности.
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class Task2 {
@@ -32,10 +33,10 @@ public class Task2 {
         employees.add("Марина Светлова");
 
         countEmploeeys();
-        outPut();
+        outPut(sort());
     }
 
-    static Map<String, Integer> nameCount = new HashMap<>();
+    static Map<String, Integer> nameCount = new LinkedHashMap<>();
     static List employees = new ArrayList<>();
 
     public static void countEmploeeys() {
@@ -48,9 +49,18 @@ public class Task2 {
         }
 
     }
-
-    public static void outPut() {
-        for (var item : nameCount.entrySet()) {
+   public static Map<String, Integer> sort(){
+       Map<String, Integer> sortedNameCount = nameCount.entrySet().stream()
+               .sorted(Comparator.comparingInt(e -> -e.getValue()))
+               .collect(Collectors.toMap(
+                       Map.Entry::getKey,
+                       Map.Entry::getValue,
+                       (a, b) -> { throw new AssertionError(); },
+                       LinkedHashMap::new));
+       return sortedNameCount;
+   }
+    public static void outPut(Map<String, Integer> map) {
+        for (var item : map.entrySet()) {
             System.out.printf("%s: %s \n", item.getKey(), item.getValue() + "раз(а)");
         }
     }
